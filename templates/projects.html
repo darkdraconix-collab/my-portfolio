@@ -135,6 +135,67 @@
             color: var(--success);
             margin-bottom: 1rem;
         }
+
+        .project-screenshot-container {
+            margin: 1.5rem 0 2rem 0;
+            border-radius: 8px;
+            overflow: hidden;
+            background: rgba(30, 41, 59, 0.5);
+            border: 1px dashed rgba(255, 255, 255, 0.15);
+            transition: all 0.3s ease;
+        }
+        
+        .project-screenshot-container:hover {
+            border-color: var(--accent-blue);
+        }
+
+        .screenshot-img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 8px;
+            object-fit: cover;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .screenshot-placeholder {
+            padding: 3rem 2rem;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            color: var(--text-secondary);
+        }
+
+        .screenshot-placeholder .placeholder-icon {
+            font-size: 2.5rem;
+            color: var(--accent-cyan);
+            opacity: 0.7;
+            animation: pulse 2s infinite ease-in-out;
+        }
+
+        .screenshot-placeholder p {
+            margin: 0;
+            font-size: 0.95rem;
+            max-width: 450px;
+            line-height: 1.5;
+        }
+
+        .screenshot-placeholder code {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: monospace;
+            color: var(--accent-teal);
+            font-size: 0.9rem;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.5; transform: scale(1); }
+            50% { opacity: 0.9; transform: scale(1.05); }
+        }
     </style>
 </head>
 <body>
@@ -173,24 +234,11 @@
                 <p class="project-description">
                     A comprehensive environmental compliance dashboard tracking bilge, sludge, garbage, and miscellaneous waste streams. Real-time monitoring of daily waste generation, disposal methods, and MARPOL Annex compliance across multiple operational parameters.
                 </p>
-                <div class="metrics-showcase">
-                    <div class="metric">
-                        <div class="metric-value">5.5K</div>
-                        <div class="metric-label">Bilge (m³)</div>
-                    </div>
-                    <div class="metric">
-                        <div class="metric-value">5.3K</div>
-                        <div class="metric-label">Pumped (m³)</div>
-                    </div>
-                    <div class="metric">
-                        <div class="metric-value">180</div>
-                        <div class="metric-label">Peak Daily (m³/day)</div>
-                    </div>
-                    <div class="metric">
-                        <div class="metric-value">4 Waste</div>
-                        <div class="metric-label">Types Tracked</div>
-                    </div>
+                
+                <div class="project-screenshot-container" data-project="environmental_records">
+                    <!-- Loaded dynamically via JS -->
                 </div>
+
                 <div class="project-features">
                     <h3>Key Metrics Tracked</h3>
                     <ul class="features-list">
@@ -216,111 +264,45 @@
                 </div>
             </div>
 
-            <!-- Project 2 -->
+            <!-- Combined Project 2 & 3 -->
             <div class="project-detail">
-                <h2>⚙️ Sludge KPI Analytics</h2>
+                <h2>⚙️ Sludge & Bilge Performance KPI Analytics</h2>
                 <div class="project-meta">
                     <div class="meta-item">📅 <strong>Status:</strong> Active</div>
                     <div class="meta-item">🎯 <strong>Vessels:</strong> 60+</div>
-                    <div class="meta-item">📊 <strong>Metrics:</strong> 12+</div>
+                    <div class="meta-item">📊 <strong>Dashboard:</strong> Combined KPI</div>
                 </div>
                 <p class="project-description">
-                    Fleet-wide sludge generation KPI dashboard with per-vessel benchmarking, fuel consumption correlation, and compliance indexing. Advanced analytics enabling identification of high-sludge vessels, fuel quality assessment, and predictive maintenance planning.
+                    A unified fleet-wide KPI dashboard integrating sludge generation and bilge performance metrics. Includes per-vessel benchmarking, fuel consumption correlation, sludge ratio calculations, and bilge generation normalized by vessel deadweight (DWT). Enables like-for-like vessel comparison, compliance tracking, and predictive maintenance planning.
                 </p>
-                <div class="metrics-showcase">
-                    <div class="metric">
-                        <div class="metric-value">1.96%</div>
-                        <div class="metric-label">Avg Sludge%</div>
-                    </div>
-                    <div class="metric">
-                        <div class="metric-value">38.32</div>
-                        <div class="metric-label">Index KPI</div>
-                    </div>
-                    <div class="metric">
-                        <div class="metric-value">50.85%</div>
-                        <div class="metric-label">Compliance Rate</div>
-                    </div>
-                    <div class="metric">
-                        <div class="metric-value">82.7K</div>
-                        <div class="metric-label">Fuel (MT)</div>
-                    </div>
+                
+                <div class="project-screenshot-container" data-project="sludge_bilge">
+                    <!-- Loaded dynamically via JS -->
                 </div>
-                <div class="project-features">
-                    <h3>Advanced Analytics</h3>
-                    <ul class="features-list">
-                        <li>Sludge% calculation ratio</li>
-                        <li>Sludge Index KPI</li>
-                        <li>Compliance percentage</li>
-                        <li>Per-vessel profiling</li>
-                        <li>Fuel correlation</li>
-                        <li>Bubble visualization</li>
-                        <li>Outlier detection</li>
-                        <li>Trend analysis</li>
-                    </ul>
-                </div>
-                <div class="impact-section">
-                    <h3>✓ Impact</h3>
-                    <p>Identifies abnormal sludge patterns, supports fuel procurement decisions, enables predictive maintenance, and optimizes fleet efficiency while reducing waste costs.</p>
-                </div>
-                <div class="tech-stack">
-                    <span class="tech-badge">Power BI</span>
-                    <span class="tech-badge">KPI</span>
-                    <span class="tech-badge">Fuel</span>
-                    <span class="tech-badge">Analytics</span>
-                </div>
-            </div>
 
-            <!-- Project 3 -->
-            <div class="project-detail">
-                <h2>💧 Bilge Performance KPI Metrics</h2>
-                <div class="project-meta">
-                    <div class="meta-item">📅 <strong>Status:</strong> Active</div>
-                    <div class="meta-item">🎯 <strong>Vessels:</strong> 50+</div>
-                    <div class="meta-item">📊 <strong>Focus:</strong> Efficiency</div>
-                </div>
-                <p class="project-description">
-                    Deep-dive analysis of bilge generation normalized by vessel deadweight. Enables like-for-like vessel comparison, identifies efficiency outliers, and optimization opportunities through per-ton metrics and advanced benchmarking.
-                </p>
-                <div class="metrics-showcase">
-                    <div class="metric">
-                        <div class="metric-value">5.01</div>
-                        <div class="metric-label">Avg m³/1000 DWT</div>
-                    </div>
-                    <div class="metric">
-                        <div class="metric-value">86.37</div>
-                        <div class="metric-label">Index KPI</div>
-                    </div>
-                    <div class="metric">
-                        <div class="metric-value">84.21%</div>
-                        <div class="metric-label">Compliance</div>
-                    </div>
-                    <div class="metric">
-                        <div class="metric-value">233.48</div>
-                        <div class="metric-label">Total Index</div>
-                    </div>
-                </div>
                 <div class="project-features">
-                    <h3>Normalized Metrics</h3>
+                    <h3>Advanced Performance Metrics</h3>
                     <ul class="features-list">
-                        <li>Per 1000 DWT normalization</li>
-                        <li>Bilge Index KPI</li>
-                        <li>Compliance tracking</li>
-                        <li>DWT-normalized comparison</li>
-                        <li>Bubble visualization</li>
-                        <li>Anomaly detection</li>
-                        <li>Vessel type analysis</li>
-                        <li>Improvement recommendations</li>
+                        <li>Sludge% calculation ratio & index KPI</li>
+                        <li>Per 1000 DWT bilge normalization & index KPI</li>
+                        <li>Fleet compliance tracking and profiling</li>
+                        <li>Fuel quality and consumption correlation</li>
+                        <li>Vessel size and class benchmarking</li>
+                        <li>Interactive bubble visualizations</li>
+                        <li>Outlier and anomaly detection</li>
+                        <li>Data-driven optimization insights</li>
                     </ul>
                 </div>
                 <div class="impact-section">
                     <h3>✓ Impact</h3>
-                    <p>Fair comparison across vessel sizes, identifies underperformers, benchmarks against standards, supports cost reduction, and enables data-driven optimization decisions.</p>
+                    <p>Enables normalized benchmarking across different vessel sizes, identifies abnormal waste generation trends, supports fuel procurement optimization, and provides actionable data to improve fleet efficiency and lower environmental compliance costs.</p>
                 </div>
                 <div class="tech-stack">
                     <span class="tech-badge">Power BI</span>
-                    <span class="tech-badge">Metrics</span>
+                    <span class="tech-badge">KPI Dashboard</span>
                     <span class="tech-badge">Normalization</span>
                     <span class="tech-badge">Benchmarking</span>
+                    <span class="tech-badge">Waste Analytics</span>
                 </div>
             </div>
 
@@ -335,24 +317,11 @@
                 <p class="project-description">
                     Multi-dimensional fuel consumption analysis by vessel type, operational state, fuel category, and quarterly trends. Comprehensive EPI dashboard supporting IMO compliance and fuel optimization strategies.
                 </p>
-                <div class="metrics-showcase">
-                    <div class="metric">
-                        <div class="metric-value">15.9M</div>
-                        <div class="metric-label">Fuel Laden (MT)</div>
-                    </div>
-                    <div class="metric">
-                        <div class="metric-value">5.8M</div>
-                        <div class="metric-label">Fuel Ballast (MT)</div>
-                    </div>
-                    <div class="metric">
-                        <div class="metric-value">570+</div>
-                        <div class="metric-label">Fleet Vessels</div>
-                    </div>
-                    <div class="metric">
-                        <div class="metric-value">4</div>
-                        <div class="metric-label">Fuel Categories</div>
-                    </div>
+
+                <div class="project-screenshot-container" data-project="energy_performance">
+                    <!-- Loaded dynamically via JS -->
                 </div>
+
                 <div class="project-features">
                     <h3>Multi-Dimensional Analysis</h3>
                     <ul class="features-list">
@@ -380,7 +349,7 @@
 
             <!-- Project 5 -->
             <div class="project-detail">
-                <h2>🌍 Synergy Group Emissions Reports</h2>
+                <h2>🌍 Emissions Analytics Reports</h2>
                 <div class="project-meta">
                     <div class="meta-item">📅 <strong>Status:</strong> Active</div>
                     <div class="meta-item">🎯 <strong>Emissions:</strong> 10+ Types</div>
@@ -389,24 +358,11 @@
                 <p class="project-description">
                     Comprehensive fleet emissions footprint analysis tracking GHG, CO2, CH4, N2O, SOx, NOx, PM10, PM2.5, and methane slip. EEOI calculations and fuel type contribution tracking supporting ESG reporting.
                 </p>
-                <div class="metrics-showcase">
-                    <div class="metric">
-                        <div class="metric-value">9.08</div>
-                        <div class="metric-label">EEOI (gCO2/T.NM)</div>
-                    </div>
-                    <div class="metric">
-                        <div class="metric-value">4.36</div>
-                        <div class="metric-label">GHG (gCO2eq)</div>
-                    </div>
-                    <div class="metric">
-                        <div class="metric-value">0.123</div>
-                        <div class="metric-label">NOx (g/T.NM)</div>
-                    </div>
-                    <div class="metric">
-                        <div class="metric-value">70.82%</div>
-                        <div class="metric-label">HFO Share</div>
-                    </div>
+
+                <div class="project-screenshot-container" data-project="emissions_reports">
+                    <!-- Loaded dynamically via JS -->
                 </div>
+
                 <div class="project-features">
                     <h3>Emissions Tracking</h3>
                     <ul class="features-list">
@@ -444,6 +400,7 @@
                 <p class="project-description">
                     Integrated compliance reporting system supporting IMO DCS, EU MRV, and UK MRV submissions. Error tracking, rectification support, comprehensive audit trails, and documentation management for regulatory submissions.
                 </p>
+
                 <div class="project-features">
                     <h3>Compliance Features</h3>
                     <ul class="features-list">
@@ -483,5 +440,42 @@
     </footer>
 
     <script src="{{ url_for('send_static', path='js/script.js') }}"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const containers = document.querySelectorAll(".project-screenshot-container");
+            const extensions = ["png", "jpg", "jpeg", "webp"];
+            
+            containers.forEach(container => {
+                const projectName = container.dataset.project;
+                let loaded = false;
+                
+                function tryLoad(index) {
+                    if (index >= extensions.length) {
+                        // If no image was found, show a styled placeholder
+                        container.innerHTML = `
+                            <div class="screenshot-placeholder">
+                                <div class="placeholder-icon">📊</div>
+                                <p>No dashboard screenshot found. To display yours, copy the screenshot into <code>static/images/projects/</code> and name it <code>${projectName}.[png/jpg/jpeg/webp]</code>.</p>
+                            </div>
+                        `;
+                        return;
+                    }
+                    
+                    const ext = extensions[index];
+                    const src = `/static/images/projects/${projectName}.${ext}`;
+                    const img = new Image();
+                    img.onload = () => {
+                        container.innerHTML = `<img src="${src}" alt="${projectName} Dashboard Screenshot" class="screenshot-img">`;
+                    };
+                    img.onerror = () => {
+                        tryLoad(index + 1);
+                    };
+                    img.src = src;
+                }
+                
+                tryLoad(0);
+            });
+        });
+    </script>
 </body>
 </html>
